@@ -70,11 +70,8 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambah">
-            <i class="fas fa-plus"></i> &nbsp; Tambah Karyawan
+            <i class="fas fa-plus"></i> &nbsp; Tambah Catatan
             </button>
-
-            <a href="{{ url('catatan') }}"" class="btn btn-primary mb-3">Go somewhere</a>
-            
             &nbsp;
             <a href="{{ route('export-produk') }}" class="btn btn-success mb-3">
                 <i class="fa fa-file-excel"></i> Export
@@ -82,9 +79,10 @@
             &nbsp;
             <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target="#formImport">
                 <i class="fa fa-file-excel"></i> Import
-            </button>
+            </button> &nbsp;
+            <a href="{{ url('tambah') }}" target="_blank" class="btn btn-danger btn-aksi me-md-2 mb-3">
+                <i class="fas fa-print fa-lg"></i></a>
            
-
             @include('catatan.data')
 
         </div>
@@ -168,8 +166,6 @@
         $('#formCatatanModal').on('shown.bs.modal', function(){
             $('#nama_produk').delay(1000).focus().select(); 
         })
-
-        
 
     </script>
 @endpush

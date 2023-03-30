@@ -9,6 +9,6 @@ class Catatan extends Model
 {
     use HasFactory;
     protected $table = 'catatan';
-
     protected $fillable = ['lokasi', 'tanggal', 'waktu', 'suhu','foto','lama','desc'];
+    
 }

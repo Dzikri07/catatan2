@@ -220,7 +220,7 @@
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
           />
-          <span class="brand-text ml-2">Aplikasi Pembkran</span>
+          <span class="brand-text ml-2">Catatan Perjalanan</span>
         </a>
 
         <!-- Sidebar -->
@@ -291,31 +291,40 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('produk') }}" class="nav-link">
+                <a href="{{ url('aksesoris') }}" class="nav-link">
                   <i class="nav-icon fas fa-th-list"></i>
                   <p>
-                    Absensi Karyawan
+                    Transasksi
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('simulasi') }}" class="nav-link">
+                <a href="{{ url('LaporanBug') }}" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                   <p>
-                    Simulasi
+                    Laporkan Bug
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('Pemasok') }}" class="nav-link">
+                <a href="{{ url('baju') }}" class="nav-link">
                 <i class="nav-icon fas far fa-truck-moving"></i>
                   <p>
-                    Pemasok
+                    Penjualan Baju
                   </p>
                 </a>
               </li>
+              <li class="nav-iten">
+                <a href="{{ route('logout')}}" class="nav-link">
+                <i class="nav-icon fa fa-power-off"></i>&nbsp;&nbsp;&nbsp;  
+              <p>Logout</p></a>
+              </li>
+              
             </ul>
+            
           </nav>
+
+       
           <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->

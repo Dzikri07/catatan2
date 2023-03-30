@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use MyCLabs\Enum\Enum;
 
 return new class extends Migration
 {
@@ -13,13 +14,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produks', function (Blueprint $table) {
+        Schema::create('laporanBug', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_produk', 100);
-            $table->date('tanggal');
-            $table->time('waktu_masuk');
-            $table->enum('status', ['hadir', 'sakit', 'cuti'])->default('hadir');
-            $table->time('waktu_keluar');
+            $table->enum('jenis', ['functional_error', 'performance_defects', 'usability_defects','compatibility_error','security_error','syntax_error','logic_error']);
+            $table->string('deskripsi', 100);
+            $table->date('tgl_kejadian');
+            $table->string('pelapor', 100);
+            $table->enum('status', ['reported','on progress','solved']);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produk');
+        Schema::dropIfExists('laporan_bug');
     }
 };

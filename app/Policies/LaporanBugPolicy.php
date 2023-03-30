@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\pemasok;
+use App\Models\laporanBug;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PemasokPolicy
+class LaporanBugPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class PemasokPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\pemasok  $pemasok
+     * @param  \App\Models\laporanBug  $laporanBug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, pemasok $pemasok)
+    public function view(User $user, laporanBug $laporanBug)
     {
         //
     }
@@ -48,10 +48,10 @@ class PemasokPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\pemasok  $pemasok
+     * @param  \App\Models\laporanBug  $laporanBug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, pemasok $pemasok)
+    public function update(User $user, laporanBug $laporanBug)
     {
         //
     }
@@ -60,10 +60,10 @@ class PemasokPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\pemasok  $pemasok
+     * @param  \App\Models\laporanBug  $laporanBug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, pemasok $pemasok)
+    public function delete(User $user, laporanBug $laporanBug)
     {
         //
     }
@@ -72,10 +72,10 @@ class PemasokPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\pemasok  $pemasok
+     * @param  \App\Models\laporanBug  $laporanBug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, pemasok $pemasok)
+    public function restore(User $user, laporanBug $laporanBug)
     {
         //
     }
@@ -84,10 +84,10 @@ class PemasokPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\pemasok  $pemasok
+     * @param  \App\Models\laporanBug  $laporanBug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, pemasok $pemasok)
+    public function forceDelete(User $user, laporanBug $laporanBug)
     {
         //
     }

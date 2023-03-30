@@ -22,7 +22,7 @@
         <!-- Default box -->
         <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Transaksi</h3>
+            <h3 class="card-title">Baju</h3>
         </div>
         <div class="card-body">
           <section class="content">
@@ -32,51 +32,50 @@
                 <h3>Form</h3>
               </div>
               <div class="card-body">
-                <form method="post" action="transaksi" id="form-transaksi">
+                <form method="post" action="Baju" id="form-Baju">
                   <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                       <label for="id">Id Karyawan</label>
                       <input type="text" class="form-control" id="id" placeholder="Id" name="id" required>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                      <label for="nama">Nama Pembeli</label>
+                      <input type="text" class="form-control" id="nama" placeholder="Tanggal Beli" name="nama" required>
+                    </div>
+                    <div class="form-group col-md-4">
                       <label for="nama">Tanggal Beli</label>
                       <input type="date" class="form-control" id="tanggal" placeholder="Tanggal Beli" name="tanggal" required>
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="telpon">Nama Barang</label>
-                      <select class="custom-select" id="barang" name="barang">
-                          <option selected disabled>Pilih Jenis Barang</option>
-                          <option value="detergent" data-harga="15000">detergent</option>
-                          <option value="pewangi" data-harga="10000">pewangi</option>
-                          <option value="detergent sepatu" data-harga="25000">detergent sepatu</option>
+                    <div class="form-group col-md-4">
+                      <label for="telpon">Warna</label>
+                      <select class="custom-select" id="warna" name="warna">
+                          <option selected disabled>Pilih Ukuran</option>
+                          <option value="Merah">Merah</option>
+                          <option value="Hijau">Hijau</option>
+                          <option value="Putih">Putih</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                      <label for="telpon">Nama Barang</label>
+                      <select class="custom-select" id="barang" name="barang">
+                          <option selected disabled>Pilih Ukuran</option>
+                          <option value="S" data-harga="30000">S</option>
+                          <option value="M" data-harga="25000">M</option>
+                          <option value="L" data-harga="35000">L</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
                       <label for="tanggal">Harga</label>
                       <input type="text" class="form-control" id="harga" placeholder="Harga" readonly name="harga" required let>
                     </div>
+                    
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputPassword4">Jumlah</label>
                       <input type="number" class="form-control" id="jumlah" placeholder="Jumlah" name="jumlah"  min="0" step="1" value="0" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputPassword4">Pembayaran</label>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pembayaran" id="pembayaran1" value="Cash" checked>
-                        <label class="form-check-label" for="pembayaran1">
-                          Cash
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pembayaran" id="pembayaran2" value="E-money">
-                        <label class="form-check-label" for="pembayaran2">
-                          E-money
-                        </label>
-                      </div>
                     </div>
                   </div>&nbsp;
                  <div class="form-group row">
@@ -99,33 +98,24 @@
                        <button type="button" class="btn btn-success" id="btn-sorting">Urutkan</button>  
                     </div>
                     <div class="col-sm-4">
-                      <div class="form-check form-check-inline mt-1 ml-2">
-                          <input class="form-check-input filter" type="checkbox" name="pembayaran" id="jpcash" value="Cash">
-                          <label class="form-check-label" for="jpcash">Cash</label>
-                      </div> &nbsp;
-                      <div class="form-check form-check-inline mt-1">
-                          <input class="form-check-input filter" type="checkbox" name="pembayaran" id="jpemoney" value="E-money">
-                          <label class="form-check-label" for="jpemoney">E-Money</label>
-                      </div>
-                  </div>
-                    <div class="col-sm-4">
                       <input type="search" class="form-control" id="teks-cari">
                     </div>
                     <div class="col-sm-2">
                       <button type="button" id="btn-search" class="btn btn-secondary">Cari</button>
                     </div>
                   </div>
-                <table class="table table-bordered table-compact table-hover" id="data-transaksi">
+                <table class="table table-bordered table-compact table-hover" id="data-Baju">
                   <thead>
                     <tr>
-                      <th>Id Karyawan</th>
+                      <th>Id</th>
+                      <th>Nama</th>
                       <th>Tanggal Beli</th>
-                      <th>Nama Barang</th>
+                      <th>Ukuran</th>
+                      <th>Jumlah</th>
                       <th>Harga Barang</th>
-                      <th>Jumlah Barang</th>
-                      <th>Diskon</th>
-                      <th>Total</th>
-                      <th>Pembayaran</th>
+                      <th>Warna</th>
+                      <th>disc</th>
+                      <th>total</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -147,8 +137,8 @@
 
 @push('js')
 <script>
-  function insertData(dataTransaksi){
-    const data = $('#form-transaksi').serializeArray()
+  function insertData(dataBaju){
+    const data = $('#form-Baju').serializeArray()
 
        // console.log(data)
        let newData = {}
@@ -159,7 +149,7 @@
        })
        console.log(newData)
  
-       localStorage.setItem('dataTransaksi', JSON.stringify([...dataTransaksi, newData]))
+       localStorage.setItem('dataBaju', JSON.stringify([...dataBaju, newData]))
        return newData
      }
   
@@ -180,22 +170,24 @@
 
        let jmlBarang = jmlDiskon = jmlTotal=0 
        arr.forEach(function(item, index){
-        let harga = item['barang']=== "detergent"? 15000:(item['barang']==="pewangi"? 10000: 25000);
+        let harga = item['barang']=== "S"? 30000:(item['barang']==="M"? 25000: 35000);
         let jmlHarga =harga *item['jumlah']
-        let diskon = jmlHarga >=50000? jmlHarga * 0.15 :0
+        let diskon = jmlHarga >=50000? jmlHarga * 0.10 :0
         let total = jmlHarga - diskon
         jmlBarang += item['jumlah']
         jmlDiskon += diskon 
         jmlTotal += total
          row += `<tr>`
          row += `<td>${item['id']}</td>`
+         row += `<td>${item['nama']}</td>`
          row += `<td>${item['tanggal']}</td>`
          row += `<td>${item['barang']}</td>`
-         row += `<td>${item['harga']}</td>`
          row += `<td>${item['jumlah']}</td>`
+        
+         row += `<td>${item['harga']}</td>`
+          row += `<td>${item['warna']}</td>`
          row += `<td>${diskon}</td>`
          row += `<td>${total}</td>`
-         row += `<td>${item['pembayaran']}</td>`
          row += `</tr>`
 
        })
@@ -203,7 +195,7 @@
          row += `<td colspan="4">Jumlah Total</td>`
          row += `<td>${jmlBarang}</td>`
          row += `<td>${jmlDiskon}</td>`
-         row += `<td colspan ="2">${jmlTotal}</td>`
+         row += `<td colspan ="3">${jmlTotal}</td>`
          row += '</tr>'
        return row
      }
@@ -291,39 +283,39 @@
 
    $(function(){
      // initialize
-     let dataTransaksi = JSON.parse(localStorage.getItem('dataTransaksi')) || []
-     $('#data-transaksi tbody').html(showData(dataTransaksi))
+     let dataBaju = JSON.parse(localStorage.getItem('dataBaju')) || []
+     $('#data-Baju tbody').html(showData(dataBaju))
  
     //event klik input data
     $('#btn-insert').on('click',function(){
       //  e.prevantDefault()
-         dataTransaksi.push(insertData(dataTransaksi)) 
-         $('#data-transaksi tbody').html(showData(dataTransaksi))
+         dataBaju.push(insertData(dataBaju)) 
+         $('#data-Baju tbody').html(showData(dataBaju))
        })
  
     //event klik sorting
     $('#btn-sorting').on('click',function(){
-        dataTransaksi = sorting(dataTransaksi, 'harga')
+        dataBaju = sorting(dataBaju, 'harga')
 
-        $('#data-transaksi tbody').html(showData(dataTransaksi))
+        $('#data-Baju tbody').html(showData(dataBaju))
       })
 
      //event klik searching
       $('#btn-search').on('click',function(){
         let teksSearch = $('#teks-cari').val()
-        let id = searching(dataTransaksi,'barang', teksSearch)
+        let id = searching(dataBaju,'barang', teksSearch)
         let data = []
         if(id >= 0)
-          data.push(dataTransaksi[id])
+          data.push(dataBaju[id])
         console.log(id)
         console.log(data)
-        $('#data-transaksi tbody').html(showData(data))
+        $('#data-Baju tbody').html(showData(data))
       })
 
       $('.filter').on('click', function(){
             const checked = [...document.querySelectorAll('.filter:checked')].map(e => e.value);
-            const data = filter(dataTransaksi, checked)
-            $('#data-transaksi tbody').html(showData(data))
+            const data = filter(dataBaju, checked)
+            $('#data-Baju tbody').html(showData(data))
       })
 
       $('#barang').on('change', function(){
@@ -336,8 +328,8 @@
       // $('#filter').on('click',function(){
       //   let inputCash =$('#Cash').is(':checked') ? 'Cash' || null
       //   let inputEmoney = $('#E-Money').is(':checked') ? 'E-Money' || null
-      //   data = filter(dataTransaksi, inputCash, inputEmoney)
-      //   $('#data-transaksi tbody').html(showData(data))
+      //   data = filter(dataBaju, inputCash, inputEmoney)
+      //   $('#data-Baju tbody').html(showData(data))
       // })
  
     })

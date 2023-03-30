@@ -11,7 +11,9 @@
       <div class="modal-body">
         <form method="post" action="catatan" enctype="multipart/form-data">
             @csrf
-            
+            <div class="form-group row-md-8">
+
+            </div>
             <div class="form-group row">
                 <label for="nama_produk" class="col-sm-4 col-form-label col-form-label">&nbsp;&nbsp;Lokasi</label>
                 <div class="col-sm-7">
@@ -49,22 +51,49 @@
           </div>
       </div>
       <label for="foto" class="col-sm-4 col-form-label col-form-label">foto</label>
-    <div>
-      </div>        
       <div id="img-wrapper" class="rounded shadow " >
-        <div style div style="box-shadow: 0 0 20px 0 #000;padding: 13px;border-radius: 50%;">
         <img width="300" id="foto" alt="FotoPerjalanan">
       </div>
     </div>
+    <div>
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
-       
         </form>
       </div>
     </div>
   </div>
 </div>
+
+{{-- tes --}}
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="catatan" enctype="multipart/form-data">
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 <!-- Modal -->
@@ -134,11 +163,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
 
 
 

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\laporanBug;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Pemasok;
 
-class PemasokSeeder extends Seeder
+class LaporanBugSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,7 @@ class PemasokSeeder extends Seeder
      */
     public function run()
     {
-        Pemasok::factory()->count(100)->create();
+        laporanBug::factory()->count(10)->create();
     }
+    
 }

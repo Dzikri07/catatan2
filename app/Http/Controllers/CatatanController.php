@@ -21,10 +21,8 @@ class CatatanController extends Controller
     {
         $data['catatan'] = catatan::get();
         return view('catatan.index')->with($data);
+        
     }
-    public function tambah(){
-        return view('catatan.tambah');}
-
     /**
      * Show the form for creating a new resource.
      *
@@ -89,21 +87,21 @@ class CatatanController extends Controller
         return redirect(request()->segment(1).'/catatan')->with('success','import data karyawan selesai');
     }
 
-    //foto
-    // public function uploadPhoto(StoreCatatanRequest $request)
-    // {
-    //     // validasi input
-    //     $validatedData = $request->validate([
-    //         'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    //     ]);
+    //print
+    public function prnpriview()
+    {
+          $catatan = Catatan::all();
+          return view('catatan')->with('catatan', $catatan);;
+    }
     
-    //     // simpan gambar ke folder 'public/images'
-    //     $path = $request->file('photo')->store('public/images');
-    
-    //     // kembalikan respons berhasil
-    //     return back()
-    //         ->with('success', 'Foto berhasil diunggah.')
-    //         ->with('image', basename($path));
-    // }
-     
+    public function cetak(){
+        $data['catatan'] = Catatan::get();
+        return view('catatan.cetak')->with($data);
+    }
+
+    public function tambah(){
+        $data['catatan'] = catatan::get();
+        return view('catatan.tambah')->with($data);
+    }
+
 }

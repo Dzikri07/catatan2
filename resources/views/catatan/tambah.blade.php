@@ -1,70 +1,54 @@
-@extends('templates.layout')
+
 
 @push('css')
 @endpush
 
-@section('isi')
+<div class="mt-1">
+    <table class="table table-bordered table-hover" id="data-catatan">
+        <thead class="thead-dark">
+            <tr>
+                <th width="5%"><center>Id. </center></th>
+                <th width="100px"><center>Lokasi</center></th>
+                <th width="150px"><center>Tanggal</center></th>
+                <th width="100px"><center>Suhu</center></th>
+                <th width="150px"><center>desc</center></th>
+                <th width="150px"><center>lama</center></th>
+                <th width="30%"><center>foto</center></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($catatan as $p)
+                <tr style="">
+                    <td><center>{{ $i = !isset($i)?1:++$i }}</center></td>
+                    <td><center>{{ $p->lokasi }}</center></td>
+                    <td><center>{{ $p->tanggal }}</center></td>
+                    <td><center>{{ $p->suhu }}</center></td>
+                    <td><center>{{ $p->desc }}</center></td>
+                    <td><center>{{ $p->lama }} Hari<center>
+                        <td>  
+                            <img src="{{ asset('fotoPerjalanan/'.$p->foto) }}" alt="" style="width: 150px;">
+                        </td>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-            <h1>Tambah Data</h1>
-            </div>
-            {{-- <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Contact</li>
-            </ol>
-            </div> --}}
-        </div>
-        </div>
-        <!-- /.container-fluid -->
-    </section>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+  </div>
+  <script>
+    window.print();
+  </script>
 
-    <!-- Main content -->
-    <section class="content">
-        <!-- Default box -->
-        <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Title</h3>
+<link rel="stylesheet" href="{{ asset('assets') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.css" />
+ <!-- jQuery -->
+ <script src="{{ asset('assets') }}/plugins/jquery/jquery.min.js"></script>
+ <!-- Bootstrap 4 -->
+ <script src="{{ asset('assets') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <!-- AdminLTE App -->
+ <script src="{{ asset('assets') }}/dist/js/adminlte.min.js"></script>
+ <!-- AdminLTE for demo purposes -->
+ <script src="{{ asset('assets') }}/dist/js/demo.js"></script>
+ <!-- Data Table -->
 
-            <div class="card-tools">
-            <button
-                type="button"
-                class="btn btn-tool"
-                data-card-widget="collapse"
-                title="Collapse"
-            >
-                <i class="fas fa-minus"></i>
-            </button>
-            <button
-                type="button"
-                class="btn btn-tool"
-                data-card-widget="remove"
-                title="Remove"
-            >
-                <i class="fas fa-times"></i>
-            </button>
-            </div>
-        </div>
-        <div class="card-body">
-            Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">Footer</div>
-        <!-- /.card-footer-->
-        </div>
-        <!-- /.card -->
-    </section>
-    <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
-@endsection
-
-@push('js')
-@endpush
+ <script src="{{ asset('assets') }}/plugins/datatables/jquery.dataTables.js"></script>
+ <script src="{{ asset('assets') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
