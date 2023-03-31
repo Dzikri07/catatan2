@@ -18,13 +18,10 @@ class cekUserLogin
     public function handle(Request $request, Closure $next, $rules)
     {
         $user = Auth::user();
-
         if(!Auth::check()){
-            return redirect ('login');
-        }
+            return redirect ('login');}
         if($user->level == $rules)
             return $next($request);
-
         return redirect('login')->with('error','you havent privilage');
     }
 }

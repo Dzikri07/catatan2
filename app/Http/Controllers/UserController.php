@@ -23,9 +23,7 @@ class UserController extends Controller
         return view('auth.login');
     }
     public function cekLogin(AuthRequest $request){
-        // return $request;
         $credential = $request->only('email', 'password');
-        // dd($credenial);
         $request->session()->regenerate();
         if(Auth::attempt($credential)){
             $user = Auth::user();
